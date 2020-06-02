@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS FOR THIS PAGE -->
+    <link rel="stylesheet" href="../css/users.css">
+    <!-- CSS FOR NAVIGATION -->
+    <link rel="stylesheet" href="../css/landingstyle.css">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/e8889d9a0b.js" crossorigin="anonymous"></script>
+    <title>Remove User</title>
+</head>
+
+<body>
+    <!-- RESPONSIVE NAVIGATION LEFT-SIDE BAR FOR SCREENS BELOW 600PX -->
+    <div class="responsive-sidenav">
+        <a class="big-links" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="big-links" href="landing.html"><i class="fas fa-user-lock"></i></a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i></a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i></a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i></a>
+            <a href="user-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i></a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i></a>
+            <a href="book-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i>  <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i></a>
+            <a href="loan-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"><i class="fas fa-info-circle"></i></button>
+        <div class="dropdown-container">
+            <p> Room 3.67<br> 100 Newport Road<br> Cardiff
+                <br> CF76 3HI<br> Tel: 029654786<br></p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION LEFT-SIDE BAR -->
+    <div class="sidenav">
+        <a class="big-links" href="../index.html">University Website</a>
+        <a class="big-links" href="../landing.html">Back to Admin</a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> Users 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i> Add User</a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i> Remove User</a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i> Update User</a>
+            <a href="user-search.html"><i class="fas fa-search"></i> Search Users</a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> Books 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i> Add Book</a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i> Delete Book</a>
+            <a href="book-search.html"><i class="fas fa-search"></i> Search Books</a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i> Loans 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i> Loan Book</a>
+            <a href="loan-search.html"><i class="fas fa-search"></i> Search Loans</a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"> Contact Support </button>
+        <div class="dropdown-container">
+            <a href="#"> Room 3.67<br> 100 Newport Road<br> Cardiff
+                <br> CF76 3HI<br> Tel: 029654786<br></a>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>University of PontyBridge Library</h1>
+        <h2>Remove User</h2>
+        <!-- Delete a user form starts here  -->
+        <div class="only" style="margin-top: 5%;">
+            <form style="padding-top: 2%;">
+                <fieldset>
+                    <Label for="delete_user">Enter Users ID: <input type="number" name="id" id="delete_user" aria-required="true" required></Label><br>
+                    <input id="search_button" type="button" value="Delete">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- JavaScript code starts here -->
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        /////////////////////////
+        // GET A LIST OF USERS //
+        /////////////////////////
+
+        // setting base URL
+        const base_url = "http://127.0.0.1:3000";
+
+        // a function that gets the list of users and adds them to a list
+        function updateUserList() {
+
+            // set up and make a GET request to the users endpoint
+            var xhttp = new XMLHttpRequest();
+            var users_url = "/users";
+
+            var query_url = base_url + users_url;
+            xhttp.open('GET', query_url);
+
+            // when request is finished add users to the list
+            xhttp.addEventListener('load', function() {
+
+                var user_list = document.querySelector('#users_list');
+                // clear the list of existing data
+                user_list.innerHTML = "";
+
+                var users = JSON.parse(this.response);
+                // loop through each user
+                users.forEach(function(user) {
+                    // create a new list item for each user and add to the list
+                    // create html labels so users understand what data point corresponds to which key
+                    var label = document.createTextNode("ID: ");
+                    var id = document.createTextNode(user.id);
+                    var label2 = document.createTextNode("Name: ");
+                    var name = document.createTextNode(user.name);
+                    var label3 = document.createTextNode("Barcode: ");
+                    var barcode = document.createTextNode(user.barcode);
+                    var label4 = document.createTextNode("Member Type: ");
+                    var memberType = document.createTextNode(user.memberType);
+
+                    // create the html <li> and <p> elements
+                    var list_item = document.createElement('li');
+                    var list_item2 = document.createElement('p');
+                    var list_item3 = document.createElement('p');
+                    var list_item4 = document.createElement('p');
+
+                    // append the labels and data into the html elements
+                    list_item.appendChild(label);
+                    list_item.appendChild(id);
+                    list_item2.appendChild(label2);
+                    list_item2.appendChild(name);
+                    list_item3.appendChild(label3);
+                    list_item3.appendChild(barcode);
+                    list_item4.appendChild(label4);
+                    list_item4.appendChild(memberType);
+
+                    // append all elements into the html <ol> tag with id="users_list"
+                    user_list.appendChild(list_item);
+                    user_list.appendChild(list_item2);
+                    user_list.appendChild(list_item3);
+                    user_list.appendChild(list_item4);
+                })
+            });
+            xhttp.send();
+        }
+        updateUserList();
+
+        ///////////////////
+        // DELETE A USER //
+        ///////////////////
+
+        document.querySelector('#search_button').addEventListener('click', function() {
+            // first check if field is not empty then make the GET request
+            if (document.getElementById("delete_user").value === "") {
+                alert("User ID to be deleted is required.");
+                return false;
+            } else {
+                // selecting the value of input which the client will ask to delete
+                var userDelete = document.getElementById("delete_user").value;
+
+                // concatenating the full URL for the request
+                var url = base_url + "/" + "users" + "/" + userDelete;
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("DELETE", url);
+                // remember to set the content type header
+                xhttp.setRequestHeader('Content-Type', 'application/json')
+
+                var params = {
+                    id: userDelete
+                };
+
+                // After requesting to delete a user with the specified ID, the list is refreshed
+                // and is showing less users
+                xhttp.addEventListener('load', function() {
+                    updateUserList();
+                });
+                xhttp.send(JSON.stringify(params));
+            }
+        });
+    </script>
+</body>
+
+</html>

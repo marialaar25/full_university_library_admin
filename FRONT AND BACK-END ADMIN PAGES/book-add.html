@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS FOR THIS PAGE -->
+    <link rel="stylesheet" href="../css/books.css">
+    <!-- CSS FOR NAVIGATION -->
+    <link rel="stylesheet" href="../css/landingstyle.css">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/e8889d9a0b.js" crossorigin="anonymous"></script>
+    <title>Add Book</title>
+</head>
+
+<body>
+    <!-- RESPONSIVE NAVIGATION LEFT-SIDE BAR FOR SCREENS BELOW 600PX -->
+    <div class="responsive-sidenav">
+        <a class="big-links" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="big-links" href="landing.html"><i class="fas fa-user-lock"></i></a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i></a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i></a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i></a>
+            <a href="user-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i></a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i></a>
+            <a href="book-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i>  <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i></a>
+            <a href="loan-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"><i class="fas fa-info-circle"></i></button>
+        <div class="dropdown-container">
+            <p> Room 3.67<br> 100 Newport Road<br> Cardiff
+                <br> CF76 3HI<br> Tel: 029654786<br></p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION LEFT-SIDE BAR -->
+    <div class="sidenav">
+        <a class="big-links" href="../index.html">University Website</a>
+        <a class="big-links" href="../landing.html">Back to Admin</a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> Users 
+              <i class="fa fa-caret-down"></i>
+            </button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i> Add User</a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i> Remove User</a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i> Update User</a>
+            <a href="user-search.html"><i class="fas fa-search"></i> Search Users</a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> Books 
+                <i class="fa fa-caret-down"></i>
+              </button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i> Add Book</a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i> Delete Book</a>
+            <a href="book-search.html"><i class="fas fa-search"></i> Search Books</a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i> Loans 
+                <i class="fa fa-caret-down"></i>
+              </button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i> Loan Book</a>
+            <a href="loan-search.html"><i class="fas fa-search"></i> Search Loans</a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"> Contact Support </button>
+        <div class="dropdown-container">
+            <a href="#"> Room 3.67<br> 100 Newport Road<br> Cardiff
+            <br> CF76 3HI<br> Tel: 029654786<br></a>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>University of PontyBridge Library</h1>
+        <h2>Add New Books</h2>
+
+        <div class="row">
+
+            <!-- The add a book form starts here  -->
+            <div class="first">
+                <form style="padding-top: 5%;">
+                    <legend> Add a New Book to Library </legend>
+                    <span>Required fields are marked with an asterisk (*).</span>
+                    <fieldset>
+                        <label for="add-newtitle">*Title:<br><input type="text" name="title" id="add-newtitle" aria-required="true" required></label><br>
+                        <label for="add-newisbn">*ISBN:<br><input type="number" name="isbn" id="add-newisbn" aria-required="true" required><br></label><br><br>
+                        <input id="add_button" type="button" value="Add Book">
+                        <input type="reset" value="Clear All Fields">
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- The add a book's author form starts here  -->
+            <div class="second">
+                <form style="padding-top: 5%;">
+                    <legend> Add an Author to Newly Added Book </legend>
+                    <span>Required fields are marked with an asterisk (*).</span>
+                    <fieldset>
+                        <label for="book-id">*Book ID:<br><input type="number" name="id" id="book-id" aria-required="true" required></label><br>
+                        <label for="add-newauthor">*Add Author Name:<br><input type="text" name="name" id="add-newauthor" aria-required="true" required><br></label><br><br>
+                        <input id="addauthor_button" type="button" value="Add Author">
+                        <input type="reset" value="Clear All Fields">
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+        <!-- This section shows all books in the database -->
+        <div class="third">
+            <legend> All Books </legend>
+            <fieldset>
+                <ol id="books_list"></ol>
+            </fieldset>
+        </div>
+    </div>
+
+    <!-- JavaScript code starts here  -->
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        ////////////////////////////////////////////////////////////////
+        // GET AND POST REQUESTS TO ADD A BOOK AND AUTHOR OF THE BOOK //
+        ////////////////////////////////////////////////////////////////
+
+        // base URL for the library server
+        const base_url = "http://127.0.0.1:3000";
+
+        // this functions creates a list of all books on the html page
+        function updateBookList() {
+
+            // making a GET request to the books endpoint
+            var xhttp = new XMLHttpRequest();
+
+            var query_url = base_url + "/books";
+            xhttp.open('GET', query_url);
+
+            // when the request is finished, go through the data
+            // and add each book to a list
+            xhttp.addEventListener('load', function() {
+
+                var book_list = document.querySelector('#books_list');
+                // clear the list of existing data
+                book_list.innerHTML = "";
+
+                var books = JSON.parse(this.response);
+                // loop through each book
+                books.forEach(function(book) {
+                    // create a new list item for each book and add to the list
+                    // create html labels so users understand what data corresponds to which key
+                    var label = document.createTextNode("Title: ");
+                    var title = document.createTextNode(book.title);
+                    var label2 = document.createTextNode("ISBN: ");
+                    var isbn = document.createTextNode(book.isbn);
+                    var label3 = document.createTextNode("Book ID: ");
+                    var id = document.createTextNode(book.id);
+
+
+                    // create the html <li> and <p> elements
+                    var list_item = document.createElement('li');
+                    var list_item2 = document.createElement('p');
+                    var list_item3 = document.createElement('p');
+
+                    // append the labels and data into the html elements
+                    list_item.appendChild(label);
+                    list_item.appendChild(title);
+                    list_item2.appendChild(label2);
+                    list_item2.appendChild(isbn);
+                    list_item3.appendChild(label3);
+                    list_item3.appendChild(id);
+
+                    // append all elements into the html <ol> tag with id="users_list"
+                    book_list.appendChild(list_item);
+                    book_list.appendChild(list_item2);
+                    book_list.appendChild(list_item3);
+
+                })
+            });
+            xhttp.send();
+        }
+
+        // This function adds a new book to the database
+        document.querySelector('#add_button').addEventListener('click', function() {
+            // check if all fields filled
+            if (document.getElementById("add-newtitle").value === "" || document.getElementById("add-newisbn").value === "") {
+                alert("Title and ISBN fields are required.");
+                return false;
+            } else {
+                // making sure the values of client input will be sent to the server
+                var inputTitle = document.getElementById("add-newtitle").value;
+                var inputIsbn = document.getElementById("add-newisbn").value;
+
+                // full server URL to which the POST request will go to 
+                var url = base_url + "/" + "books";
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", url);
+                // setting the content type header
+                xhttp.setRequestHeader('Content-Type', 'application/json')
+
+                // specifying the input parameters
+                var params = {
+                    title: inputTitle,
+                    isbn: inputIsbn,
+                };
+
+                // when the POST request is returned, clear and update the user list
+                xhttp.addEventListener('load', function() {
+                    updateBookList();
+                });
+                xhttp.send(JSON.stringify(params));
+            }
+        });
+
+        // This function adds an author to a book that has been added 
+        document.querySelector('#addauthor_button').addEventListener('click', function() {
+            // check if all fields are filled
+            if (document.getElementById("book-id").value === "" || document.getElementById("add-newauthor").value === "") {
+                alert("Book ID and Author Name are required.");
+                return false;
+            } else {
+                // making sure the values of client input will be sent to the server
+                var input = document.getElementById("book-id").value
+                var inputName = document.getElementById("add-newauthor").value;
+
+                // full server URL to which the POST request will go to 
+                var url = base_url + "/" + "books" + "/" + input + "/authors";
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", url);
+                // setting the content type header
+                xhttp.setRequestHeader('Content-Type', 'application/json')
+
+                // specifying the input parameters
+                var params = {
+                    name: inputName,
+                };
+
+                // when the POST request is returned, clear and update the user list
+                xhttp.addEventListener('load', function() {
+                    updateBookList();
+                });
+                xhttp.send(JSON.stringify(params));
+            }
+        });
+        updateBookList();
+    </script>
+</body>
+
+</html>

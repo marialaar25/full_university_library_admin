@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS FOR NAVIGATION -->
+    <link rel="stylesheet" href="../css/landingstyle.css">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/e8889d9a0b.js" crossorigin="anonymous"></script>
+    <title>Loan Search</title>
+</head>
+
+<body>
+    <!-- RESPONSIVE NAVIGATION LEFT-SIDE BAR FOR SCREENS BELOW 600PX -->
+    <div class="responsive-sidenav">
+        <a class="big-links" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="big-links" href="landing.html"><i class="fas fa-user-lock"></i></a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i></a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i></a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i></a>
+            <a href="user-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i></a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i></a>
+            <a href="book-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i>  <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i></a>
+            <a href="loan-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"><i class="fas fa-info-circle"></i></button>
+        <div class="dropdown-container">
+            <p> Room 3.67<br> 100 Newport Road<br> Cardiff
+                <br> CF76 3HI<br> Tel: 029654786<br></p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION LEFT-SIDE BAR -->
+    <div class="sidenav">
+        <a class="big-links" href="../index.html">University Website</a>
+        <a class="big-links" href="../landing.html">Back to Admin</a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> Users 
+              <i class="fa fa-caret-down"></i>
+            </button>
+        <div class="dropdown-container">
+            <a href="user-add.html"><i class="fas fa-user-plus"></i> Add User</a>
+            <a href="user-remove.html"><i class="fas fa-user-times"></i> Remove User</a>
+            <a href="user-update.html"><i class="fas fa-user-edit"></i> Update User</a>
+            <a href="user-search.html"><i class="fas fa-search"></i> Search Users</a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> Books 
+                <i class="fa fa-caret-down"></i>
+              </button>
+        <div class="dropdown-container">
+            <a href="book-add.html"><i class="fas fa-plus-square"></i> Add Book</a>
+            <a href="book-delete.html"><i class="fas fa-minus-square"></i> Delete Book</a>
+            <a href="book-search.html"><i class="fas fa-search"></i> Search Books</a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i> Loans 
+                <i class="fa fa-caret-down"></i>
+              </button>
+        <div class="dropdown-container">
+            <a href="loan-book.html"><i class="fas fa-hourglass-start"></i> Loan Book</a>
+            <a href="loan-search.html"><i class="fas fa-search"></i> Search Loans</a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"> Contact Support </button>
+        <div class="dropdown-container">
+            <a href="#"> Room 3.67<br> 100 Newport Road<br> Cardiff
+            <br> CF76 3HI<br> Tel: 029654786<br></a>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <h1>University of PontyBridge Library</h1>
+        <h2>Search Loans</h2>
+
+        <!-- Search Users Loans form starts here -->
+        <div class="row">
+            <div class="first">
+                <form style="padding-top: 2%;">
+                    <fieldset>
+                        <legend class="legend-edit">Search User's List of Loans</legend>
+                        <label for="search_term">Enter User ID: <input type="number" name="id" id="search_term"></label>
+                        <input type="button" id="search_button" value="Search">
+                    </fieldset>
+                </form>
+                <div class="bottom-border">
+                    <legend class="legend-edit">Results</legend>
+                    <div id="output1" class="search-div col-md-6"></div>
+                </div>
+
+            </div>
+
+            <div class="second">
+                <form style="padding-top: 2%;">
+                    <fieldset>
+                        <legend class="legend-edit">Search User Currently Borrowing a Book</legend>
+                        <label for="book_id">Enter Book ID: <input type="number" name="id" id="book_id"></label>
+                        <input type="button" id="book_id_button" value="Search">
+                    </fieldset>
+                </form>
+                <div class="bottom-border">
+                    <legend class="legend-edit">Results</legend>
+                    <div id="output2" class="search-div col-md-6"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript code starts here -->
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        // Functions to be used multiple times with GET requests
+        const encodeParameters = function(params) {
+            // turns JSON data into a string format to be concatenated to the URL of the server
+            var strArray = [];
+            Object.keys(params).forEach(function(key) {
+                var paramString = encodeURIComponent(params[key]);
+                strArray.push(paramString);
+            });
+            return strArray;
+        };
+        const createList = function(parentElement) {
+            // creates a new div inside the html page
+            let newList = document.createElement("div");
+            parentElement.appendChild(newList);
+            return newList;
+        };
+        const addListItem = function(parentList, textContent) {
+            // creates a new paragraph within the new div for data to be added to 
+            let newItem = document.createElement("p");
+            newItem.appendChild(document.createTextNode(textContent));
+            parentList.appendChild(newItem);
+        };
+
+        ////////////////////////////////////
+        // SEARCH USER'S LOANS BY USER ID //
+        ////////////////////////////////////
+        const processResponse = function() {
+            // adds the returned data from the server into the html div (by id)
+            // selects which data points to add
+            let response = JSON.parse(this.response);
+            console.log(response);
+            let outputDiv = document.getElementById("output1");
+            let newList = createList(outputDiv);
+            // loop through each response and display in html
+            var i;
+            for (i = 0; i < response.length; i++) {
+                addListItem(newList, "Due Date: " + response[i].dueDate);
+                addListItem(newList, "Book ID: " + response[i].BookId)
+            }
+        };
+        // GET request by User ID
+        const makeAPIQuery = function(search_term) {
+            // set base and end URL which will be used to search for a user's loans
+            let rootURL = "http://127.0.0.1:3000/users/";
+            let endURL = "/loans";
+            // parameters which will be concatenated to the base URL
+            let params = {
+                id: search_term
+            }
+
+            // generating the full URL to send to the server
+            let queryURL = rootURL + encodeParameters(params) + endURL;
+            console.log(queryURL);
+
+            //sending the GET request
+            let xhttp = new XMLHttpRequest();
+            xhttp.addEventListener("load", processResponse);
+            xhttp.open("GET", queryURL);
+            xhttp.send();
+
+        };
+
+        // creating an event listener to only make the GET request when search button is clicked on
+        let submitButton = document.getElementById("search_button");
+        submitButton.addEventListener("click", function() {
+            if (document.getElementById("search_term").value === "") {
+                alert("Enter User ID to search.");
+                return false;
+            } else {
+                let search_term = document.getElementById("search_term").value;
+                if (search_term) {
+                    makeAPIQuery(search_term);
+                }
+            }
+        });
+
+        ///////////////////////////////////////////////
+        // SEARCH USER BORROWING A BOOK (BY BOOK ID) //
+        ///////////////////////////////////////////////
+        const processResponses = function() {
+            // same as previous processResponse function 
+            // but need different JSON data points to be displayed in the result 
+            let response = JSON.parse(this.response);
+            console.log(response);
+            let outputDiv = document.getElementById("output2");
+            let newList = createList(outputDiv);
+            // loop through response and display in html
+            var i;
+            for (i = 0; i < response.length; i++) {
+                addListItem(newList, "Due Date: " + response[i].dueDate);
+                addListItem(newList, "User ID: " + response[i].UserId)
+            }
+        };
+
+        // GET request by Book ID
+        const makeQuery = function(search_term) {
+            // set base URL
+            let rootURL = "http://127.0.0.1:3000/loans/books/";
+            // parameters which will be concatenated to the base URL based on input from client
+            let params = {
+                BookId: search_term
+            }
+
+            // generating the full URL to send to the server
+            let queryURL = rootURL + encodeParameters(params);
+            console.log(queryURL);
+
+            //sending the GET request
+            let xhttp = new XMLHttpRequest();
+            xhttp.addEventListener("load", processResponses);
+            xhttp.open("GET", queryURL);
+            xhttp.send();
+        };
+
+        // creating an event listener to only make the GET request when button is clicked on
+        let submittButton = document.getElementById("book_id_button");
+        submittButton.addEventListener("click", function() {
+            if (document.getElementById("book_id").value === "") {
+                alert("Enter Book ID to search.");
+                return false;
+            } else {
+                let search_term = document.getElementById("book_id").value;
+                if (search_term) {
+                    makeQuery(search_term);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

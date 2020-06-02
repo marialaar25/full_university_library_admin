@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+/* NAVIGATION RIGHT-SIDE BAR */
+
+.sidenav {
+    /* Fixed sidenav, full height */
+    height: 100%;
+    width: 15vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4056a1;
+    overflow-x: hidden;
+    padding-top: 5vh;
+}
+
+.sidenav a,
+.dropdown-btn {
+    /* Style the sidenav links and the dropdown button */
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    color: #efe2ba;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.big-links {
+    font-size: 1.5rem;
+    line-height: 5vh;
+}
+
+.dropdown-btn {
+    font-size: 1.5rem;
+    line-height: 5vh;
+}
+
+.sidenav a:hover,
+.responsive-sidenav a:hover,
+.dropdown-btn:hover {
+    /* On mouse-over */
+    color: black;
+    background-color: #efe2ba;
+}
+
+.active {
+    /* Add an active class to the active dropdown button */
+    background-color: #d79922;
+    color: white;
+}
+
+.dropdown-container {
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    display: none;
+    background-color: #919fd6;
+}
+
+.dropdown-container a {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+}
+
+.fa-caret-down {
+    /* Optional: Style the caret down icon */
+    float: right;
+    padding-right: 8px;
+}
+
+@media only screen and (min-width: 956px) {
+    div.responsive-sidenav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 955px) {
+    div.main {
+        margin-left: 13vw;
+    }
+    .sidenav {
+        display: none;
+    }
+    .responsive-sidenav {
+        height: 100%;
+        width: 15vw;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #4056a1;
+        overflow-x: hidden;
+        padding-top: 5vh;
+    }
+    .responsive-sidenav a {
+        /* Style the sidenav links */
+        padding: 6px 8px 6px 8px;
+        text-decoration: none;
+        color: #efe2ba;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+        font-weight: bold;
+    }
+    div.row {
+        flex-direction: column;
+    }
+    div.first,
+    div.second {
+        width: 100%;
+        padding: 0vw 2vw 2vw 2vw;
+        box-shadow: none;
+    }
+    div.only {
+        box-shadow: none;
+    }
+    div form.add {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .fa-caret-down,
+    #fa {
+        display: none;
+    }
+    .dropdown-container a {
+        padding-left: 1rem;
+    }
+    label>input {
+        font-size: 1rem;
+        padding: 5px;
+        margin: 5px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* MAIN CONTENT */
+
+.main {
+    /* Main content */
+    margin-left: 15vw;
+    /* Same as the width of the sidenav */
+    font-size: 20px;
+    padding: 0px 2vw;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first,
+.second {
+    width: 49%;
+    border: 2px solid white;
+    padding: 0vw 2vw 2vw 2vw;
+    background-color: #4056a1;
+    color: #efe2ba;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px 5px gray;
+}
+
+.only {
+    width: 100%;
+    border: 2px solid white;
+    padding: 0vw 2vw 1.5vw 2vw;
+    background-color: #4056a1;
+    color: #efe2ba;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px 5px gray;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+fieldset {
+    border: none;
+}
+
+span {
+    color: white;
+    font-size: 0.9rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input[type=button] {
+    width: 100%;
+    background-color: #d79922;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    width: 70%;
+    background-color: white;
+    opacity: 0.5;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* USERS */
+
+form.add {
+    width: 49%;
+}
+
+.update {
+    text-align: right;
+}
+
+div.bottom-border {
+    border-bottom: 5px solid #efe2ba;
+    border-bottom-width: thin;
+}
+
+
+/* BOOKS */
+
+div.third {
+    width: 100%;
+    border: 2px solid white;
+    margin-top: 2%;
+    padding: 0vw 2vw 1.5vw 2vw;
+    background-color: #4056a1;
+    color: #efe2ba;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px 5px gray;
+    display: flex;
+    justify-content: center;
+}
+
+.third legend {
+    padding-top: 2%;
+    border-bottom: 5px solid #efe2ba;
+    border-bottom-width: thin;
+}

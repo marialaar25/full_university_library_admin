@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landingstyle.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/e8889d9a0b.js" crossorigin="anonymous"></script>
+    <title>Administrator Login</title>
+</head>
+
+<body>
+    <!-- RESPONSIVE NAVIGATION LEFT-SIDE BAR FOR SCREENS BELOW 600PX -->
+    <div class="responsive-sidenav">
+        <a class="big-links" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="big-links" href="landing.html"><i class="fas fa-user-lock"></i></a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-add.html"><i class="fas fa-user-plus"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-remove.html"><i class="fas fa-user-times"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-update.html"><i class="fas fa-user-edit"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-add.html"><i class="fas fa-plus-square"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-delete.html"><i class="fas fa-minus-square"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i>  <i id="fa" class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/loan-book.html"><i class="fas fa-hourglass-start"></i></a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/loan-search.html"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"><i class="fas fa-info-circle"></i></button>
+        <div class="dropdown-container">
+            <p> Room 3.67<br> 100 Newport Road<br> Cardiff
+                <br> CF76 3HI<br> Tel: 029654786<br></p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION LEFT-SIDE BAR -->
+    <div class="sidenav">
+        <a class="big-links" href="index.html">University Website</a>
+        <a class="big-links" href="landing.html">Admin Home</a>
+
+        <!-- Users Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-alt"></i> Users 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-add.html"><i class="fas fa-user-plus"></i> Add User</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-remove.html"><i class="fas fa-user-times"></i> Remove User</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-update.html"><i class="fas fa-user-edit"></i> Update User</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/user-search.html"><i class="fas fa-search"></i> Search Users</a>
+        </div>
+
+        <!-- Books Management -->
+        <button class="dropdown-btn"><i class="fas fa-book"></i> Books 
+            <i class="fa fa-caret-down"></i>
+          </button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-add.html"><i class="fas fa-plus-square"></i> Add Book</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-delete.html"><i class="fas fa-minus-square"></i> Delete Book</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/book-search.html"><i class="fas fa-search"></i> Search Books</a>
+        </div>
+
+        <!-- Loans Management -->
+        <button class="dropdown-btn"><i class="fas fa-user-clock"></i> Loans 
+            <i class="fa fa-caret-down"></i>
+          </button>
+        <div class="dropdown-container">
+            <a href="FRONT AND BACK-END ADMIN PAGES/loan-book.html"><i class="fas fa-hourglass-start"></i> Loan Book</a>
+            <a href="FRONT AND BACK-END ADMIN PAGES/loan-search.html"><i class="fas fa-search"></i> Search Loans</a>
+        </div>
+
+        <!-- Support Information -->
+        <button class="dropdown-btn"> Contact Support </button>
+        <div class="dropdown-container">
+            <a href="#"> Room 3.67<br> 100 Newport Road<br> Cardiff
+            <br> CF76 3HI<br> Tel: 029654786<br></a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <h1>University of PontyBridge Library</h1>
+        <h2>Administrator Access</h2>
+
+        <div class="row">
+            <div class="first">
+                <h2>Make a Donation</h2>
+                <span>Required fields are marked with an asterisk (*).</span>
+                <form>
+                    <fieldset>
+                        <label for="fname">* First name: <input type="text" placeholder="Name" name="fname" id="fname" aria-required="true" required></label><br>
+                        <label for="lname">* Last name: <input type="text" placeholder="Surname" name="lname" id="lname" aria-required="true" required></label><br>
+                        <label for="donate">* Amount (£): <input type="number" placeholder="Enter Amount" name="amount" id="donate" aria-required="true" required></label><br>
+                        <br><input id="donate-button" type="button" value="Donate">
+                        <input type="reset" value="Clear Field">
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div class="second">
+                <h2>Donations Received</h2>
+                <ul id="past-donations">
+                    <li>Sarah Smith: £50</li>
+                    <li>Amy Evans: £40</li>
+                    <li>Dan Moore: £60</li>
+                    <li>Kieran Mayers: £90</li>
+                    <li>Finn Gray: £60</li>
+                    <li>Sarah Smith: £50</li>
+                    <li>Amy Evans: £40</li>
+                    <li>Dan Moore: £60</li>
+                    <li>Kieran Mayers: £90</li>
+                    <li>Finn Gray: £60</li>
+                    <li>Sarah Smith: £50</li>
+                    <li>Amy Evans: £40</li>
+                    <li>Dan Moore: £60</li>
+                    <li>Kieran Mayers: £90</li>
+                    <li>Finn Gray: £60</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NAVIGATION MENU JS FOR DROP-DOWNS -->
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        /////////////////////////////////////////
+        // GET DONORS LIST AND MAKE A DONATION //
+        /////////////////////////////////////////
+
+        // base URL for the library server
+        const base_url = "http://127.0.0.1:3000";
+
+        // GET request to display a list of Donors and the amount they donated
+        function pastDonations() {
+            // making a GET request to the donations endpoint
+            var xhttp = new XMLHttpRequest();
+
+            var query_url = base_url + "/donations";
+            xhttp.open('GET', query_url);
+
+            // when the request is finished, go through the data
+            // and add each donor to a list
+            xhttp.addEventListener('load', function() {
+
+                var donor_list = document.querySelector('#past-donations');
+                // clear the list of existing data
+                donor_list.innerHTML = "";
+
+                var donations = JSON.parse(this.response);
+                // loop through each author
+                donations.forEach(function(donation) {
+                    // create a new list item for each author and add to the list
+                    // create html labels so users understand what data point corresponds to which key
+                    var label = document.createTextNode("Donor Name: ");
+                    var name = document.createTextNode(donation.name);
+                    var label2 = document.createTextNode("Amount Donated: £");
+                    var amount = document.createTextNode(donation.amount);
+
+                    // create the html <li> and <p> elements
+                    var list_item = document.createElement('section');
+                    var list_item2 = document.createElement('p');
+
+                    // append the labels and data into the html elements
+                    list_item.appendChild(label);
+                    list_item.appendChild(name);
+                    list_item2.appendChild(label2);
+                    list_item2.appendChild(amount);
+
+                    // append all elements into the html <ol> tag with id="users_list"
+                    donor_list.appendChild(list_item);
+                    donor_list.appendChild(list_item2);
+                })
+            });
+            xhttp.send();
+        }
+
+        // This function makes a POST request when the donate button is clicked
+        document.querySelector('#donate-button').addEventListener('click', function() {
+            // First check that a form is not submitted while empty and the user fills all required fields
+            if (document.getElementById("name").value === "" || document.getElementById("donate").value === "") {
+                alert("Name and Amount fields are required.");
+                return false;
+            } else {
+                // assignning the values of input to a variable
+                var name = document.getElementById("name").value;
+                var amount = document.getElementById("donate").value;
+
+                // full server URL to which the POST request will go to
+                var url = base_url + "/" + "donations";
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", url);
+                // setting the content type header
+                xhttp.setRequestHeader('Content-Type', 'application/json')
+
+                // specifying the input parameters
+                var params = {
+                    name: name,
+                    amount: amount,
+                };
+
+                // when the POST request is returned, clear and update the prev donations list
+                xhttp.addEventListener('load', function() {
+                    pastDonations();
+                });
+                xhttp.send(JSON.stringify(params));
+                return true;
+            }
+        });
+        pastDonations();
+    </script>
+</body>
+
+</html>

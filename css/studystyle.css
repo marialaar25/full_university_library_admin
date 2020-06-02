@@ -1,0 +1,301 @@
+/* Setting base rules that apply to body and to anything else, denoted by a "*" */
+
+body,
+*,
+html {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img {
+    padding: 5%;
+}
+
+
+/* =================================================
+Second part of the Study Page, Study Head, Course 1
+==================================================== */
+
+h1.study {
+    /* Formatting all headings */
+    font-family: "Quattrocento", serif;
+    color: #d79922;
+    margin-bottom: 0.5em;
+    text-align: left;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-left: 5%;
+}
+
+h2 {
+    font-family: "Quattrocento", serif;
+    color: #f13c20;
+    margin-bottom: 0.5em;
+    text-align: right;
+    font-size: 2em;
+}
+
+p {
+    /* Formatting all paragraphs */
+    font-family: "Quattrocento Sans", sans-serif;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+
+/*Course 1 - Name and Filler Text*/
+
+.sectiontwo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-between;
+}
+
+.img-one {
+    width: 50%;
+}
+
+.img-one img {
+    width: 100%;
+    height: auto;
+}
+
+.img-two img {
+    width: 100%;
+    height: auto;
+}
+
+.coursename1 {
+    position: relative;
+    width: 50%;
+    margin-left: 3em;
+    padding: 2vh;
+}
+
+.courseimg1 {
+    position: relative;
+}
+
+.sectiontwomobile {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    /* change position with screen below 1100px */
+    .sectiontwo {
+        display: none;
+    }
+    .sectiontwomobile {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-left: 5%;
+        margin-right: 5%;
+        justify-content: space-around;
+    }
+    .coursename1mobile {
+        text-align: right;
+        position: relative;
+    }
+    .sectiontwomobile img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        text-align: right;
+    }
+}
+
+
+/* ========================================
+Third Secttion of the Study Page, Course 2
+=========================================== */
+
+.sectionthree {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-between;
+}
+
+.coursename2 {
+    width: 50%;
+    position: relative;
+    margin-right: 3rem;
+}
+
+.img-three {
+    width: 50%;
+}
+
+.img-three img {
+    width: 100%;
+    height: auto;
+}
+
+.sectionthreemobile {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    /* change position when screen below 1100px */
+    .sectionthree {
+        display: none;
+    }
+    .sectionthreemobile {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .coursename2mobile {
+        text-align: right;
+        position: relative;
+    }
+    .sectionthreemobile img {
+        width: 100%;
+        height: auto;
+    }
+    h2 {
+        text-align: right;
+    }
+}
+
+
+/* ========================================
+Fourth Section of the Study Page, Course 3
+=========================================== */
+
+.sectionfour {
+    /* same process as above */
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-between;
+}
+
+.img-four {
+    width: 50%;
+}
+
+.img-four img {
+    width: 100%;
+    height: auto;
+}
+
+.coursename3 {
+    position: relative;
+    width: 50%;
+    margin-left: 3em;
+    padding: 2vh;
+}
+
+.courseimg3 {
+    position: relative;
+}
+
+.sectionfourmobile {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .sectionfour {
+        display: none;
+    }
+    .sectionfourmobile {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-left: 5%;
+        margin-right: 5%;
+        justify-content: space-around;
+    }
+    .coursename3mobile {
+        text-align: right;
+        position: relative;
+    }
+    .sectionfourmobile img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        text-align: right;
+    }
+    p {
+        padding-bottom: 2rem;
+    }
+}
+
+
+/* ====================================================
+Sixth Section of the Website, Footer similar to header
+======================================================= */
+
+.footer {
+    display: flex;
+    flex: 1 1 40%;
+    /* ability to shrink and grow depending on screen size */
+    border: 1px solid purple;
+    text-align: right;
+    min-height: 15vh;
+    min-width: 100vw;
+    justify-content: space-between;
+    background-color: #9A55B2;
+    margin: 0;
+    padding: 0;
+    font-family: "Quattrocento", serif;
+    /* use heading font to look good next to uni name heading */
+}
+
+
+/* Bottom navigation bar */
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.li2 {
+    display: block;
+    position: relative;
+    left: 1vw;
+    bottom: -3vh;
+    text-align: left;
+    font-family: "Quattrocento", serif;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.uninamebottom {
+    float: left;
+    position: relative;
+    bottom: -6vh;
+    right: 1vw;
+    margin: 1em;
+    font-size: 1.7em;
+}
+
+@media(max-width: 450px) {
+    /* overflows its box if not adjusted */
+    .uninamebottom {
+        position: relative;
+        top: 1rem;
+        left: 7rem;
+    }
+    .li2 {
+        bottom: -4vh;
+    }
+}
